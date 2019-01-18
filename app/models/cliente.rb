@@ -1,3 +1,10 @@
 class Cliente < ApplicationRecord
-  belongs_to :aluguel
+
+  rails_admin do
+
+  end
+
+  def name
+    nome.try(:humanize)
+  end
 end

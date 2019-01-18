@@ -6,11 +6,27 @@ RailsAdmin.config do |config|
       field :id do
         label "ID"
       end
+      
       field :email do
         label "Email"
       end
+      
       field :created_at
+
+      field :approved do
+        # inline_edit true
+        label "Aprovado ?"
+      end
     end
+
+    # show do
+    #   field :approved 
+    # end
+
+    # edit do 
+    #   field :approved 
+    # end
+
   end
   ### Popular gems integration
 
@@ -21,7 +37,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_user)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
 
   ## == Pundit ==
   # config.authorize_with :pundit

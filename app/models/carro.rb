@@ -1,3 +1,5 @@
 class Carro < ApplicationRecord
-  belongs_to :aluguel
+  def name
+    tipo.try(:humanize)
+  end
 end

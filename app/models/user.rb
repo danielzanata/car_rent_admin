@@ -11,4 +11,8 @@ class User < ApplicationRecord
    def inactive_message
      approved? ? super : :not_approved
    end
+
+   def name
+     email.try(:split, '@').try(:first).try(:humanize)
+   end
 end
